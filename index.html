@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura do Tesouro</title>
+    <!-- Usando caminho relativo para o arquivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Tela Inicial -->
+        <div class="screen" id="screen-1">
+            <h1>Bem-vindo à Aventura!</h1>
+            <p>Você é um aventureiro em busca de um tesouro escondido!</p>
+            <p>Para encontrar o tesouro, você precisa tomar as decisões certas.</p>
+            <button onclick="nextScreen('pergunta-1')">Iniciar Aventura</button>
+        </div>
+
+        <!-- Pergunta 1 -->
+        <div class="screen" id="pergunta-1">
+            <h1>Você está em uma encruzilhada na floresta. Para qual caminho você vai?</h1>
+            <div class="buttons">
+                <button onclick="checkAnswer('certo', 'pergunta-2')">Caminho à direita</button>
+                <button onclick="checkAnswer('errado1')">Caminho à esquerda</button>
+            </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="screen" id="pergunta-2">
+            <h1>Você encontra um rio turbulento. O que você faz?</h1>
+            <div class="buttons">
+                <button onclick="checkAnswer('errado2')">Tentar nadar</button>
+                <button onclick="checkAnswer('certo', 'pergunta-3')">Construir uma balsa</button>
+            </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="screen" id="pergunta-3">
+            <h1>Você chega a uma caverna escura. O que fazer?</h1>
+            <div class="buttons">
+                <button onclick="checkAnswer('errado3')">Entrar sem hesitar</button>
+                <button onclick="checkAnswer('certo', 'pergunta-4')">Acender uma tocha</button>
+            </div>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div class="screen" id="pergunta-4">
+            <h1>Você encontra um guardião do tesouro. O que você faz?</h1>
+            <div class="buttons">
+                <button onclick="checkAnswer('errado4')">Desafiar o guardião para uma luta</button>
+                <button onclick="checkAnswer('certo', 'pergunta-5')">Conversar com o guardião pacificamente</button>
+            </div>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div class="screen" id="pergunta-5">
+            <h1>O tesouro está à sua frente! O que você faz?</h1>
+            <div class="buttons">
+                <button onclick="checkAnswer('errado5')">Ignorar o tesouro e sair</button>
+                <button onclick="checkAnswer('certo', 'screen-sucesso')">Pegar o tesouro</button>
+            </div>
+        </div>
+
+        <!-- Tela de Sucesso -->
+        <div class="screen" id="screen-sucesso">
+            <h1>Parabéns! Você encontrou o tesouro!</h1>
+            <button onclick="resetGame()">Voltar ao menu</button>
+        </div>
+
+        <!-- Tela de Fim de Jogo com mensagens personalizadas -->
+        <div class="screen" id="screen-fim">
+            <h1>Fim de Jogo</h1>
+            <p id="mensagem-fim"></p>
+            <button onclick="resetGame()">Voltar ao menu</button>
+        </div>
+    </div>
+
+    <!-- Usando caminho relativo para o arquivo JS -->
+    <script src="script.js"></script>
+</body>
+</html>
